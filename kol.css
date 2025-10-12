@@ -1,0 +1,421 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(90deg, #fffbe6 0%, #f9f9f9 100%);
+    overflow: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Remove rounded corners and shadow */
+    background: rgba(255,255,255,0.92); /* Slightly transparent white for readability */
+    margin: 0;
+    padding: 48px 24px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Responsive font sizes */
+h1 {
+    color: #2d3a5a;
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #3b4a6b;
+    margin-top: 36px;
+    font-size: 1.35rem;
+    border-bottom: 2px solid #e0e7ff;
+    padding-bottom: 4px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+p, .about-me {
+    color: #374151;
+    font-size: 1.15rem;
+    margin-bottom: 32px;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.skill {
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.skill:hover {
+    background: linear-gradient(90deg, #60a5fa 0%, #6366f1 100%);
+    transform: scale(1.08);
+}
+
+.project {
+    margin-bottom: 28px;
+    padding: 18px 0 0 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.project:last-child {
+    border-bottom: none;
+}
+
+.project-title {
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.project-desc {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.project-desc a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 8px;
+    transition: color 0.2s;
+}
+
+.project-desc a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.bubble-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(135deg, #6366f1 60%, #60a5fa 100%);
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(99,102,241,0.12);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.bubble:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 32px rgba(99,102,241,0.18);
+}
+
+.contact {
+    margin-bottom: 0;
+}
+
+.resume-download {
+    display: inline-block;
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 18px;
+    transition: background 0.2s, transform 0.2s;
+}
+.resume-download:hover {
+    background: linear-gradient(90deg, #60a5fa 0%, #6366f1 100%);
+    transform: scale(1.05);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 32px;
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+.back-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 18px 8px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    background: #181818; /* Black sidebar */
+    box-shadow: 2px 0 16px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0;
+    z-index: 10;
+}
+
+.profile-pic {
+    width: 110px;
+    height: 110px;
+    background: #ffe066;
+    border-radius: 50%;
+    margin-bottom: 18px;
+    /* You can add a background-image here if you want */
+}
+
+.sidebar-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff; /* White text for contrast */
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.sidebar-title {
+    font-size: 1rem;
+    color: #ffe066; /* Accent color for title */
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    width: 100%;
+    align-items: center;
+}
+
+.sidebar nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.08rem;
+    font-weight: 500;
+    padding: 8px 0;
+    width: 80%;
+    text-align: center;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    background: #ffe066;
+    color: #181818;
+}
+
+.sidebar-contact {
+    margin-top: auto;
+    font-size: 0.98rem;
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar-contact a {
+    color: #ffe066;
+    text-decoration: none;
+}
+
+.main-bg {
+    position: absolute;
+    left: 320px;
+    top: 0;
+    width: calc(100vw - 320px);
+    height: 100vh;
+    background: transparent; /* No image, just gradient from body */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-content section {
+    flex: 1 1 0;
+    max-width: 600px;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 32px 56px;
+    margin-bottom: 32px;
+    max-width: 100%;
+}
+
+.main-image {
+    width: 420px;
+    height: 520px;
+    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80') center center/cover no-repeat;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(60,72,88,0.18);
+    margin-left: 48px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1100px) {
+    .main-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main-image {
+        width: 100%;
+        height: 220px;
+        margin-left: 0;
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 100vw;
+        height: auto;
+        position: static;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px;
+    }
+    .main-bg {
+        position: static;
+        width: 100vw;
+        left: 0;
+        background-position: center center;
+    }
+    .main-content {
+        margin: 0;
+        padding: 18px 10px;
+        border-radius: 0;
+        box-shadow: none;
+        background: rgba(255,255,255,0.95);
+    }
+    section {
+        padding: 18px 10px;
+    }
+}
+
+.sidebar-image {
+    width: 220px;
+    height: 220px;
+    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80') center center/cover no-repeat;
+    border-radius: 18px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(60,72,88,0.18);
+}
+
+.home-container,
+.resume-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.skills-graph {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 0 32px 0; /* Align left, no auto centering */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.bar .label {
+    width: 100px;
+    font-weight: 600;
+    color: #6366f1;
+    font-size: 1.15rem;
+}
+
+.bar-bg {
+    flex: 1;
+    height: 32px;
+    background: #e0e7ff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-right: 12px;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    border-radius: 16px 0 0 16px;
+    transition: width 0.6s;
+}
+
+.bar .score {
+    font-weight: 700;
+    color: #374151;
+    width: 32px;
+    text-align: right;
+    font-size: 1.15rem;
+}
+
+/* DO NOT add text-align: center to .container or .project */
+
+
